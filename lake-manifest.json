@@ -13,7 +13,7 @@
   {"url": "https://github.com/leanprover-community/lean4game.git",
    "type": "git",
    "subDir": "server",
-   "rev": "0714c1d3fd4ebb60e4921bfe308c2277f89e55ad",
+   "rev": "d5697d052e5154b909f379073a591ebf66eb3e22",
    "name": "GameServer",
    "manifestFile": "lake-manifest.json",
    "inputRev": "v4.3.0",
