@@ -11,7 +11,7 @@ Introduction "
 Up till now we have been using `rewrite` to manually instruct Lean which steps to take, one at a time.
 This is a very useful tool, but after a while you will notice that there are some rewrites that
 will always make things easier when substituted.
-For example we almost always want to use the fact that multiplying by 1 or adding 0 doesn't
+For example, we almost always want to use the fact that multiplying by 1 or adding 0 doesn't
 change things. For this, the `simp` tactic will be very handy.
 
 
@@ -21,21 +21,25 @@ In these exercises we will write the proofs of a couple of the identities in
 <https://en.wikipedia.org/wiki/Commutator#Identities_(group_theory)>
 in Lean.
 
-First we will set up the basic definitions. In World 1, we didn't make any new mathematical
+First, we will set up the basic definitions. In World 1 we didn't make any new mathematical
 definitions, we just made use of the natural numbers, propositions, and some lemmas Lean
 already knew about.
 
 ```
-def commutator {G : Type*} [Group G] (x y : G) : G := x⁻¹ * y⁻¹ * x * y
+def commutator {G : Type*} [Group G]
+(x y : G) : G := x⁻¹ * y⁻¹ * x * y
 ```
 ```
-def conjugate {G : Type*} [group G] (x y : G) : G := y⁻¹ * x * y
+def conjugate {G : Type*} [group G]
+(x y : G) : G := y⁻¹ * x * y
 ```
 ```
-lemma commutator_def {G : Type*} [Group G] {x y : G} : [x ; y] = x⁻¹ * y⁻¹ * x * y := rfl
+lemma commutator_def {G : Type*} [Group G]
+{x y : G} : [x ; y] = x⁻¹ * y⁻¹ * x * y := rfl
 ```
 ```
-lemma conjugate_def {G : Type*} [Group G] {x y : G} : y ^ x = x⁻¹ * y * x := rfl
+lemma conjugate_def {G : Type*} [Group G]
+{x y : G} : y ^ x = x⁻¹ * y * x := rfl
 ```
  "
 def commutator {G : Type*} [Group G] (x y : G) : G := x⁻¹ * y⁻¹ * x * y

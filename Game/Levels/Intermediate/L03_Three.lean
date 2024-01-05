@@ -5,7 +5,7 @@ World "Intermediate"
 Level 3
 
 Introduction
-"In this problem you will see how to prove a statement involving the existencial
+"In this problem you will see how to prove a statement involving the existential
 quantifier and some inequalities. In the right sidebar you will find some useful
 tactics like `constructor` and `use`, together with some new lemmas.
 "
@@ -21,7 +21,7 @@ TacticDoc constructor
 will produce two goals, one for each side, that can be solved individually."
 
 TacticDoc use
-"When the goal is to prove an existential, `∃` we can
+"When the goal is to prove an existential `∃`, we can
 supply the witness (an example that has the desired property)
 using the tactic `use`.
 

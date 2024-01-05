@@ -4,7 +4,9 @@ World "Intermediate"
 Level 1
 
 Introduction "
-  In this level we introduce the tactic `intro`. You will need it to get started."
+  In this level we introduce the tactic `intro`. You will need it to get started.
+  Please click on the `intro` tactic in the right sidebar to read an explanation.
+  "
 
 variable {X : Type}
 

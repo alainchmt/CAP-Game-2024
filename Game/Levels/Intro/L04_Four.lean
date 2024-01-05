@@ -9,15 +9,15 @@ Introduction "
 
 ## Exact
 
-Sometimes after rewriting the hypotheses and goal enough we reach a point where the goal is
-exactly the same as one of the hypothesis.
-In this case we want to tell Lean that we are finished, one of our hypotheses now matches
+Sometimes after rewriting the hypotheses and goal enough, we reach a point where the goal is
+exactly the same as one of the hypotheses.
+In this case, we want to tell Lean that we are finished, one of our hypotheses now matches
 the conclusion we needed to get to.
 
 The tactic to do this is called `exact`, and to use it we just need to supply the name of
 the hypothesis we want to use.
 
-For example if we were trying to prove that 3 divides some natural number `n` and we
+For example, if we were trying to prove that 3 divides some natural number `n` and we
 ended up with the goal state:
 ```
 Objects:
@@ -29,6 +29,9 @@ Goal:
 ```
 then `exact h` would complete the proof.
 
+
+We note that binary logical connectives like `∧` and `∨` associate to the right, so
+`Q ∧ P ∧ Q` means `Q ∧ (P ∧ Q)`.
 "
 
 Statement (P Q : Prop) (h : Q ∧ P ∧ Q) :
@@ -76,7 +79,7 @@ R
 
 If you can spot how to make a term of type `R`, then you
 can just make it and say you're done using the `exact` tactic
-together with the formula you have spotted. For example the
+together with the formula you have spotted. For example, the
 above goal could be solved with
 
 `exact j(h(p)),`

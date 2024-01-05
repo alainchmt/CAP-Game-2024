@@ -10,21 +10,24 @@ lemma Intro.add_comm : ∀ (x : ℕ) (y : ℕ), x + y = y + x := Nat.add_comm
 
 Introduction "
 ## The setup
-You should see different windows on this page, they will contain part of using Lean,
-lets go through them one-by-one.
+We note that the following description applies to the Desktop version of this website.
+If you are using a mobile device, the layout may be different.
+
+You should see different windows on this page, they will contain part of using Lean.
+Let's go through them one by one.
 
 The middle one is where you tell Lean what steps you want to make in your proof.
 You can do this in 'Typewriter mode' or 'Editor mode'.
-In the top right corner you'll find the `</> ` button. You can click it to switch to 'Editor mode',
-which will give you a better feel of Lean.
+We suggest you click the `</>` button in the top right corner to switch to 'Editor mode',
+which is closer to how Lean actually looks.
 
 By typing statements here in precise language we instruct Lean how we want the proof to go.
 
 At the bottom of the middle window, it reads `Current Goal`.
-This panel represents what Lean thinks the current state of your proof is,
-it also shows the objects you are working with, and the assumptions that you currently have. The statement (or statements) you are trying to show come after
+This panel represents what Lean thinks the current state of your proof is.
+It also shows the objects you are working with and the assumptions that you currently have. The statement (or statements) you are trying to show come after
 `Goal`.
-For example a valid state might look like
+For example, a valid state might look like
 ```
 Objects:
 n : ℕ
@@ -34,12 +37,12 @@ Goal:
 Odd (n + 1)
 ```
 which means that we have assumed `n` is a natural number and that `n` is even, and we are trying to show that `n + 1` is
-odd (we sometimes write `⊢` as shorthand notation for `Goal`).
-In order to prove this we will need to use more than what is written here however, we might need the definition of
+odd (we sometimes write `⊢` as a shorthand notation for `Goal`).
+In order to prove this, we will need to use more than what is written here, however. We might need the definition of
 an even and an odd number, so in addition to the current hypotheses we also will make use of a library of lemmas that
 we have proved so far.
 
-Below this there will be feedback about any errors in your current proof.
+Below this, there will be feedback about any errors in your current proof.
 As you move your cursor around by clicking different parts of the proof the goal will update, we can
 always step backwards and forwards through the proof using the arrow keys to check what we were
 proving before.
@@ -47,8 +50,8 @@ If you write some syntax Lean doesn't understand, or a proof step that doesn't m
 return an error, the most common error being `unsolved goals`
 which just means that you aren't finished with the proof yet!
 
-On the right of the screen you will find a list of *Theorems* and *tactics* you can use to prove
-results, this is here to remind you the things we've talked about so far.
+On the right of the screen, you will find a list of *Theorems* and *tactics* you can use to prove
+results, this is here to remind you of the things we've talked about so far.
 
 ## The language
 
@@ -58,9 +61,9 @@ Here is an example of a lemma statement in Lean:
 
 ``` lemma add_comm : ∀ (x : ℕ) (y : ℕ), x + y = y + x ```
 
-This lemma states that for all natural numbers `x` and `y` that addition of `x` and `y` commutes,
-hopefully you agree that this is a straightforward, but very useful fact!
-Note the first word `lemma` is a keyword (highlighted in blue) and means we are stating a new
+This lemma states that for all natural numbers `x` and `y` the addition of `x` and `y` commutes.
+Hopefully, you agree that this is a straightforward, but very useful fact!
+Note the first word `lemma` is a keyword and means we are stating a new
 lemma.
 The second word is simply a name we give to the lemma so we can refer to it later, naming lemmas
 works much better than numbering lemmas when you need to refer back to many things.
@@ -81,21 +84,34 @@ for instance `add_comm 2 3` means `2 + 3 = 3 + 2`.
 Here we used 2 and 3, but we could apply this lemma with variables too by using their names
 instead of 2 and 3.
 
+When you click on `add_comm` in the *Theorems* list on the right, you'll see that the
+full name of the lemma is `Intro.add_comm`. The prefix before the dot is the namespace
+where that lemma is contained. It is often the case, for example, when the relevant namespace of a lemma is open, that
+the prefix before the dot can be omitted when typing it in Lean.
 
 ### Rewriting
-Rewriting is one of the most basic methods of proof, we substitute one object we know equals another
+Rewriting is one of the most basic methods of proof. We substitute one object we know equals another
 inside what we want to prove, by doing this we can get closer to something that we already know to
 be true,
 or get to a point where things cancel out or simplify.
 
-For example if `h` is a name for the fact that `X = Y`, then `rewrite [h]` will change
+For example, if `h` is a name for the fact that `X = Y`, then `rewrite [h]` will change
 all `X`s in the goal to `Y`s.
-On the right hand side in the tactics panel you can find more details about
+On the right-hand side in the tactics panel you can find more details about
 `rewrite`, you don't need to read it now, but it's there if you ever want to check the syntax
 again.
 
+### Reflexivity
+A goal of the form `A = A` can be solved using the reflexivity tactic called `rfl`.
+For example, if the goal is `x + y = x + y`, then `rfl` will solve it.
+
 Now try to use a sequence of `rewrite` steps to prove the lemma below by typing them into the box
-on the right.
+on the right. To finish the proof, you can use `rfl`.
+
+It's worth noting that while this game introduces basic lemmas and tactics for proving
+mathematical statements in Lean, Lean does have more advanced
+automation tools that can solve certain goals in one go.
+
  "
 /- Hint (hidden := true) " Delete `sorry` and type `rewrite add_comm x y,` (don't forget the comma!).
   That is the first step of the proof, after typing the comma you should see the goal (on the right)
@@ -109,15 +125,18 @@ LemmaDoc Intro.add_comm as "add_comm" in "Arithmetic"
 NewLemma Intro.add_comm
 
 open Intro
-Statement (x y z w : ℕ) : x + y + (z + w) = (w + z) + (y + x) := by
+Statement (x y z w : ℕ) : x + y + (z + w) = w + z + (y + x) := by
   Hint (hidden := true) " Start by typing `rewrite [add_comm x y]`.
-  That is the first step of the proof, after typing it you should see the goal (at the bottom)
+  That is the first step of the proof. After typing it, you should see the goal (at the bottom)
   change so the sides of the equation look closer to each other.
   The next two steps of the proof go on the next lines, and are similar to the first, can you work
-  them out?"
+  them out?
+  To finish the proof, you may want to use `rfl`.
+  "
   rewrite [add_comm]
-  rw [add_comm z w]
-  rw [add_comm x y]
+  rewrite [add_comm z w]
+  rewrite [add_comm x y]
+  rfl
 
 TacticDoc rfl
 " This tactic proves goals of the form `⊢ A = A` "
@@ -140,7 +159,7 @@ of the goal.
 ## Details
 
 The `rw` tactic is a way to do 'substituting in'. There
-are two distinct situations where to use this tactics.
+are two distinct situations where to use these tactics.
 
 1) If `h : A = B` is a hypothesis (i.e., a proof of `A = B`)
 in your local context

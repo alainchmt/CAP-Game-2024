@@ -22,19 +22,19 @@ after all!
 Other than needing to use specific commands to explain the proof steps, we can work on proofs like
 usual, using definitions and already established facts to show new results.
 The proof assistant will completely keep track of what facts we know so far, and show us what else
-needs to be shown to finish the current proof, importantly it won't let us show something that
+needs to be shown to finish the current proof. Importantly, it won't let us show something that
 doesn't logically follow from what we have proved so far.
 
 This is a very literal sort of computer assisted proof, we are using a computer to step through and
 understand individual steps in a proof.
 Later we will see how the assistant can do more than just follow our instructions, it can also
 search for us and find useful facts we might want to use. Lean can even complete some moderately
-difficult tricky on its own, using proof methods based on pre-defined rules.
+difficult or tricky proofs on its own, using proof methods based on pre-defined rules.
 This saves us time thinking about details in some situations, without losing any confidence in the
 correctness of the result, and in some cases we can even learn from the proofs Lean finds!
 
 
-To get started click on the first world, the circle labelled Intro, on the right.
+To get started click on the first world, the circle labeled Intro, on the right.
 You can use this menu to navigate as you try more of the problems.
 Have fun!
 
