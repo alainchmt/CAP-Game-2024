@@ -51,7 +51,7 @@ return an error, the most common error being `unsolved goals`
 which just means that you aren't finished with the proof yet!
 
 On the right of the screen, you will find a list of *Theorems* and *tactics* you can use to prove
-results, this is here to remind you of the things we've talked about so far.
+results, this is here to remind you of the things we've talked about so far. You can click on them to see more info.
 
 ## The language
 
@@ -106,7 +106,7 @@ A goal of the form `A = A` can be solved using the reflexivity tactic called `rf
 For example, if the goal is `x + y = x + y`, then `rfl` will solve it.
 
 Now try to use a sequence of `rewrite` steps to prove the lemma below by typing them into the box
-on the right. To finish the proof, you can use `rfl`.
+on the right. To finish the proof, you can use `rfl`. We note the convention that `x + y + z` means `(x + y) + z`.
 
 It's worth noting that while this game introduces basic lemmas and tactics for proving
 mathematical statements in Lean, Lean does have more advanced
