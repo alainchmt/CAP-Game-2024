@@ -26,9 +26,9 @@ So if we wanted to show `⊢ x = 2 ∨ y = 1` we could `rewrite [or_comm]` to ch
 `⊢ y = 1 ∨ x = 2`, which might then match one of our hypotheses better.
 
 Check out the right sidebar for some new lemmas that you can use to prove the statement below.
-If you click on the `not_not` lemma in the right sidebar, you will notice the curly (instead of round) brackets used in `{P : Prop}`.
-This signals that `P` is a so-called implicit argument to `not_not`, meaning that syntax like `rewrite [not_not P]` is not correct,
-and instead `rewrite [not_not]` should be used (where the argument `P` is then inferred automatically).
+If you click on the `not_not` lemma in the right sidebar, you will notice the curly (instead of round) brackets used in `{a : Prop}`.
+This signals that `a` is a so-called implicit argument to `not_not`, meaning that syntax like `rewrite [not_not a]` is not correct,
+and instead `rewrite [not_not]` should be used (where the argument `a` is then inferred automatically).
 "
 
 Statement (P Q R : Prop) (hPQ : P ↔ Q) (hQR : Q ↔ ¬R) :
