@@ -84,10 +84,6 @@ for instance `add_comm 2 3` means `2 + 3 = 3 + 2`.
 Here we used 2 and 3, but we could apply this lemma with variables too by using their names
 instead of 2 and 3.
 
-When you click on `add_comm` in the *Theorems* list on the right, you'll see that the
-full name of the lemma is `Intro.add_comm`. The prefix before the dot is the namespace
-where that lemma is contained. It is often the case, for example, when the relevant namespace of a lemma is open, that
-the prefix before the dot can be omitted when typing it in Lean.
 
 ### Rewriting
 Rewriting is one of the most basic methods of proof. We substitute one object we know equals another
@@ -186,7 +182,7 @@ note that this is a small letter L, not a number 1).
 If it looks like this in the bottom box:
 ```
 Objects:
-A B C : set X
+A B C : Set X
 Assumptions:
 h : A = B ∪ C
 Goal:
@@ -204,7 +200,7 @@ You can use `rw` to change a hypothesis as well.
 For example, if your local context looks like this:
 ```
 Objects:
-A B C D : set X
+A B C D : Set X
 Assumptions:
 h1 : A = B ∩ C
 h2 : B ∪ A = D
