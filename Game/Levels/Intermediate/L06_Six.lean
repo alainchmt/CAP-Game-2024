@@ -8,7 +8,7 @@ Introduction "In this problem you will look at proving that the composition of t
 continuous
 
 Some things you should know:
-- A subset of a space `X` is an element of the type `set X` in Lean
+- A subset of a space `X` is an element of the type `Set X` in Lean
 - The notation for the preimage of a set `U` along a map `f` is `f ⁻¹' U`
 
 You will need to use the tactics intro, rewrite, and apply for this problem!
